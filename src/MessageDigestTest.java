@@ -10,15 +10,15 @@ import java.security.NoSuchAlgorithmException;
  */
 public class MessageDigestTest {
     public static void main(String... args) throws NoSuchAlgorithmException, UnsupportedEncodingException {
-        String code = "CODE:{123456}";
+        String message = "高数挂了，桑心";
+        byte[] plainText = message.getBytes();
 
-        // 1. get message digest instance
+        // 1. Creates the message digest
         MessageDigest digest = MessageDigest.getInstance("SHA1");
-        // lets c information about the provider...
-        System.out.println("ProviderInfo:\t" + digest.getProvider().getInfo());
-        // 2. init the algorithm
-        digest.update(code.getBytes());
-        // 3. print the message digest
-        System.out.println("MessageDigest:\t" + new String(digest.digest(), "UTF8") + "\t\t(not human language...)");
+        // 2. Calculates the message digest wit
+        // h a plaintext string.
+        digest.update(plainText);
+        // 3. Reads the message digest.
+        System.out.println("MessageDigest:\t" + new String(digest.digest(), "UTF8"));
     }
 }
