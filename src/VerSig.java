@@ -16,7 +16,7 @@ public class VerSig {
     @SuppressWarnings("all")
     public static void main(String...args) throws Exception {
         // 1. read the encoded public key
-        FileInputStream pubKFile = new FileInputStream("F:\\publicKey");
+        FileInputStream pubKFile = new FileInputStream("C:\\Demo\\publicKey");
         byte[] encKey = new byte[pubKFile.available()];
         pubKFile.read(encKey);
         pubKFile.close();
@@ -26,7 +26,7 @@ public class VerSig {
         PublicKey publicKey = KeyFactory.getInstance("DSA").generatePublic(spec);
 
         // 3. read the signature
-        FileInputStream signatureFile = new FileInputStream("F:\\signature");
+        FileInputStream signatureFile = new FileInputStream("C:\\Demo\\signature");
         byte[] sigByte = new byte[signatureFile.available()];
         signatureFile.read(sigByte);
         signatureFile.close();
@@ -36,7 +36,7 @@ public class VerSig {
         signature.initVerify(publicKey);
 
         // 5. supply the data
-        FileInputStream dataFile = new FileInputStream("F:\\code");
+        FileInputStream dataFile = new FileInputStream("C:\\Demo\\code");
         BufferedInputStream dataStream = new BufferedInputStream(dataFile);
         byte[] tmpBuf = new byte[dataStream.available()];
         int len;

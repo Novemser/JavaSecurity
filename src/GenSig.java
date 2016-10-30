@@ -30,7 +30,7 @@ public class GenSig {
         signature.initSign(privateKey);
 
         // 5. supply the data
-        FileInputStream fileInputStream = new FileInputStream("F:\\code");
+        FileInputStream fileInputStream = new FileInputStream("C:\\Demo\\code");
         BufferedInputStream bufferedInputStream = new BufferedInputStream(fileInputStream);
         byte[] tmpBuf = new byte[bufferedInputStream.available()];
         int len;
@@ -43,11 +43,11 @@ public class GenSig {
         byte[] sig = signature.sign();
 
         // 7. save the signature/public key in a file
-        FileOutputStream outputStream = new FileOutputStream("F:\\signature");
+        FileOutputStream outputStream = new FileOutputStream("C:\\Demo\\signature");
         outputStream.write(sig);
         outputStream.close();
 
-        outputStream = new FileOutputStream("F:\\publicKey");
+        outputStream = new FileOutputStream("C:\\Demo\\publicKey");
         outputStream.write(publicKey.getEncoded());
         outputStream.close();
 
