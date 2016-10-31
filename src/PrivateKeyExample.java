@@ -42,7 +42,7 @@ public class PrivateKeyExample {
         byte[] cipherText = cipher.doFinal(plainText);
         print(ANSI_GREEN, "Finished encryption!\n");
         print(ANSI_PURPLE, "Origin message encrypted to:");
-        print(ANSI_PURPLE, new String(cipherText, "UTF8"));
+        print(new String(cipherText, "UTF8"), ANSI_PURPLE);
 
         print(ANSI_CYAN, "---------------------------------------------------------------------------");
         print(ANSI_CYAN, "Sending cipherText to receiver...");

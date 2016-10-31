@@ -11,15 +11,6 @@
   MD5 and SHA-1 are the most used algorithms.
   - ### Example  
   The MessageDigest class manipulates message digests. The following methods are used in the Message digest code example:
-```  
-// 1. Creates the message digest
-MessageDigest digest = MessageDigest.getInstance("SHA1");
-// 2. Calculates the message digest with a plaintext string.
-digest.update(code.getBytes());
-// 3. Reads the message digest.
-System.out.println("MessageDigest:\t" + new String(digest.digest(), "UTF8"));
-```
-
 - ## Private key cryptography
   - ### Overview  
   In this section, we'll examine the uses of private key encryption.

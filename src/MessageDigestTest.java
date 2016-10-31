@@ -1,6 +1,4 @@
-import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
 
 /**
  * Project: LearnSecurity
@@ -9,14 +7,13 @@ import java.security.NoSuchAlgorithmException;
  * 2016/10/28
  */
 public class MessageDigestTest {
-    public static void main(String... args) throws NoSuchAlgorithmException, UnsupportedEncodingException {
+    public static void main(String... args) throws Exception {
         String message = "高数挂了，桑心";
         byte[] plainText = message.getBytes();
 
         // 1. Creates the message digest
         MessageDigest digest = MessageDigest.getInstance("SHA1");
-        // 2. Calculates the message digest wit
-        // h a plaintext string.
+        // 2. Calculates the message digest with a plaintext string.
         digest.update(plainText);
         // 3. Reads the message digest.
         System.out.println("MessageDigest:\t" + new String(digest.digest(), "UTF8"));
